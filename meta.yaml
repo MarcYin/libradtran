@@ -11,6 +11,7 @@ requirements:
   build: 
     - python
     - gsl>=2.2.1
+    - libopenblas
     - make 
     - gcc 
     - flex 
@@ -20,6 +21,7 @@ requirements:
     - netcdf-fortran
   run:
     - gsl>=2.2.1
+    - libopenblas
     - make 
     - gcc 
     - flex 

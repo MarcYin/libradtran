@@ -21,4 +21,5 @@ install:
 script:
   - conda install -c f0xy libradtran
 after_success:
-  - for i in $(ls inputs/*.INP); do uvspec < $i;done 
+  - cd examples
+  - for i in $(ls examples/*.INP); do uvspec < $i;done 

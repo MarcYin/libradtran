@@ -1,0 +1,5 @@
+#      z     LWC    R_eff
+#     (km)  (g/m^3) (um)  
+      4.000     0    10.0     # The water cloud is located between
+      3.000   1.0    10.0     # 2 and 4.0 km. The parameters may 
+      2.000   1.0    10.0     # vary with altitude.

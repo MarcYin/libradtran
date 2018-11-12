@@ -1,0 +1,10 @@
+# A basic example of how the albedo of vegatation might
+# look like
+
+   250 0.05
+   400 0.05
+   650 0.10
+   700 0.20 
+  4000 0.20
+  4100 0.00
+100000 0.00
