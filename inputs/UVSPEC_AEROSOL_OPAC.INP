@@ -1,0 +1,29 @@
+# IMPORTANT:
+# For this example OPAC optical propeties data is required! It needs to 
+# be downloaded from www.libradtran.org and put into the directory 
+# data/aerosol/OPAC/mie/
+#
+	
+                         # Location of atmospheric profile file.
+atmosphere_file ../data/atmmod/afglus.dat
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+albedo 0.2               # Surface albedo
+sza 32.0                 # Solar zenith angle
+
+
+#rte_solver polradtran    # Radiative transfer equation solver
+number_of_streams  8                  # Number of streams, default
+wavelength 350           # Wavelength considered
+                        
+phi0 30                  # Solar azimuth angle
+phi 0  90 180            # Output azimuth angles relative to phi0
+umu  -0.8873 -0.5000 -0.1127  # Cosine of output polar angles
+
+#polradtran_nstokes 4     # Number of Stokes parameters
+
+aerosol_default          # switch on aerosol
+			 # specify aerosol mixture file	
+aerosol_species_file     continental_average	
+		     
+quiet

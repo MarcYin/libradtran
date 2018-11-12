@@ -1,0 +1,38 @@
+# Example for the Ross-Li BRDF parameterization; radiances are calculated for an empty 
+# atmosphere to demonstrate the angular distribution of the  reflection.
+# The example reproduces test case 14d in the DISORT3 release.
+
+# Note that due to the combination of no_scattering and no_absorption
+# the single scatering albedo is set to 1.0 which implies that dnet flux/d op dep
+# does not agree with test case 14d which has single scattering albedo of 0.0.
+
+atmosphere_file ../data/atmmod/afglus.dat 
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+
+sza 30.0                 # Solar zenith angle, from file
+phi 0.0
+
+rte_solver disort        # Radiative transfer equation solver
+deltam  on               # delta-M scaling on
+number_of_streams  32                 # Number of streams
+
+wavelength 400.0 400.0   # Wavelengths considered
+
+# BRDF data for DISORT 3 test
+brdf_rossli iso   0.091  #
+brdf_rossli vol   0.02
+brdf_rossli geo   0.0086
+brdf_rossli_hotspot
+
+# radiance angles
+umu 0.1 0.2 0.5 1.0
+phi 0 45 90 
+
+# switch atmosphere off 
+no_scattering mol
+no_absorption 
+
+output_quantity transmittance
+
+quiet

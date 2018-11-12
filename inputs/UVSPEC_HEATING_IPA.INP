@@ -1,0 +1,21 @@
+                          # Location of atmospheric profile file. 
+atmosphere_file ../examples/ATMOSPHERE_IPA.DAT
+
+mol_modify O3 300. DU
+
+sza 30.0                  # Solar zenith angle
+
+rte_solver twostr        # Radiative transfer equation solver
+pseudospherical
+
+mol_abs_param Fu          # Integrated solar radiation using Kato et al.
+                           
+wc_file ipa_files  ../examples/WC_IPA_FILES  # use independent pixel approximation
+
+zout 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+
+heating_rate
+
+output_process sum
+
+quiet

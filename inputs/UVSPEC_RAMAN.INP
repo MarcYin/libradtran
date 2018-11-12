@@ -1,0 +1,44 @@
+# Due to the computational time of the raman option, 
+# this is not a realistic example. To turn it in to a
+# realistic example you may do as follows:
+#
+#  * Most filling-in factors are calculated for radiances.
+#    To calculate radiances use the umu (and phi) option(s). This
+#    will automatically set "number_of_streams 16", thus increasing the 
+#    computational time significantly. But we want accurate
+#    answers. Don't we?
+#
+#  * You are probably doing this calculation for a instrument.
+#    Hence, you must account for the spectral resolution of the
+#    instrument. This is done either by convolving the 
+#    extraterrestrial spectrum with your slit function before
+#    calling uvspec (fast, but slightly inaccurate), or by calculating
+#    the filling-in spectrum and convolving with the slit function
+#    afterwards. Slow, but accurate. Do not use the spline option.
+#
+atmosphere_file US-standard
+source solar ../data/solar_flux/atlas_plus_modtran_ph
+mol_modify O3 300 DU
+wavelength 346.15 346.15
+sza 45
+number_of_streams 4
+# Uncomment the two lines below to get radiance example for one wavelength
+# in Fig. 3 of Spurr et al, 2008.
+#umu 1
+#number_of_streams 16
+
+# No need to specify rte_solver for raman option. It is automagically
+# set to qdisort, a special version of sdisort, which handles general
+# inhomogeneous sources.
+
+quiet
+
+zout toa
+albedo 0.05
+wc_file 1D ../examples/UVSPEC_RAMAN_WC.dat
+wc_modify tau set 10.0
+wc_modify gg set   0.7
+# To do this calculation without raman, simply comment line below.
+raman
+
+

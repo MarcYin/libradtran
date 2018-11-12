@@ -1,0 +1,20 @@
+                         # Location of atmospheric profile file. 
+atmosphere_file ../data/atmmod/afglus.dat
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+mol_modify O3 300. DU
+day_of_year 170          # Correct for Earth-Sun distance
+albedo 0.2               # Surface albedo
+sza 32.0                 # Solar zenith angle
+deltam  on               # delta-M scaling on
+number_of_streams  6                  # Number of streams
+
+rte_solver disort        # This overrides what is specified in above file
+disort_intcor moments       # use Legendre coefficients for intensity corrections
+wavelength 544.7 544.7   # Wavelengths considered
+
+
+wc_file 1D ../examples/WC.DAT  # Location of water cloud file
+wc_properties ../examples/WC.
+
+quiet

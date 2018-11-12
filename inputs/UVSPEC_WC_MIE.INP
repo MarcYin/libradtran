@@ -1,0 +1,24 @@
+#data_files_path ../data/
+
+                         # Location of atmospheric profile file.
+atmosphere_file          ../data/atmmod/afglms.dat
+
+                         # Location of the extraterrestrial spectrum
+source solar               ../data/solar_flux/kurudz_0.1nm.dat
+
+
+wavelength 350           # wavelength
+
+sza 48                   # solar zenith angle
+
+zout boa                 # output altitude at surface
+umu -1 -0.5 -0.1         # viewing angles
+phi 0 30 60 90
+
+wc_file 1D ../examples/WC.DAT
+
+wc_properties mie interpolate        # Specify Mie optical properties
+
+rte_solver disort
+
+quiet

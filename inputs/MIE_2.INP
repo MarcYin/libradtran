@@ -1,0 +1,13 @@
+mie_program MIEV0           # Select Mie code by Wiscombe
+refrac water                # Use refractive index of water
+r_eff 4 12 1                # Specify effective radius grid
+distribution gamma 7        # Specify gamma size distribution (alpha=7)
+wavelength  1600 1600       # Define wavelength
+nstokes 4                   # Calculate all phase matrix elements
+nmom 500                    # Number of Legendre terms to be computed
+nmom_netcdf 129             # Number of Legendre terms to be stored in 
+	                    #    netcdf file, must be > number_of_streams
+nthetamax 500               # Maximum number of scattering angles to be 
+                            #    used to store the phase matrix
+output_user netcdf          # Write output to netcdf file  
+verbose                     # Print verbose output 

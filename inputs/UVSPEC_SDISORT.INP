@@ -1,0 +1,5 @@
+include ../examples/UVSPEC_AEROSOL.INP
+
+rte_solver sdisort    # This overrides what is specified in above file
+
+mol_abs_param crs

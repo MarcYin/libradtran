@@ -1,0 +1,21 @@
+atmosphere_file  ../data/atmmod/afglt.dat
+#atmosphere_file ../data/atmmod/afglus.dat
+source solar       ../data/solar_flux/kurudz_1.0nm.dat
+
+albedo 0.2               # Surface albedo
+sza 30.0                 # Solar zenith angle
+
+rte_solver twostr       # Radiative transfer equation solver
+pseudospherical
+wavelength 550.0 1000.0  # Wavelength range
+
+mol_abs_param LOWTRAN     # select LOWTRAN molecular absorption 
+
+aerosol_default        
+aerosol_visibility 20
+
+radiosonde  ../examples/radiosonde_afglt_rh.dat H2O RH 
+#radiosonde ../examples/radiosonde_afglus.dat
+
+quiet
+#verbose

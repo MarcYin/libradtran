@@ -1,0 +1,4 @@
+include ../examples/UVSPEC_REPTRAN_THERMAL.INP
+
+                     # Satellite channel using representative wavel.
+mol_abs_param reptran_channel msg1_seviri_ch039

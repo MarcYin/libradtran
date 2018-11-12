@@ -1,0 +1,54 @@
+# Simulate a azimuthally averaged (0..360deg) sunshape from 0..1deg distance to the sun center
+# and 100 angular supporting points in radial direction
+
+atmosphere_file ../data/atmmod/afglus.dat
+source solar      ../data/solar_flux/kurudz_1.0nm.dat
+data_files_path ../data/
+
+wavelength 550 550 
+
+### sun
+
+sza 0
+phi0 0
+
+### solver and tricks
+
+rte_solver montecarlo
+mc_escape
+mc_photons   50000 
+mc_vroom on
+#mc_std
+
+### atmosphere
+aerosol_default
+
+### define detector
+
+# Align detector to the sun
+mc_panorama_alignment sun
+
+# Define number of pixels of the detector, in this case 10 pixels in radial direction, 1 pixel in azimuthal direction. You should define more pixels in radial direction for a well resolved sunshape, e.g. 100. 
+#              nx  ny  dx    dy [km]
+mc_sample_grid  1  10    
+
+# Detector extent. Circular field of fiew (0..360deg.) ranging from the sun center (180deg) to 1deg distance from the sun center (179 deg)
+#            umu^ phi_ phi
+mc_panorama_view 0 360 179 180 #
+
+# You probably do not want to use the option "circumsolar_var_red" when simulating sun shapes
+# (pixels small compared to su disk)
+# mc_panorama circumsolar_var_red
+
+# Include direct radiance in the result
+mc_panorama with_direct_rad
+mc_panorama distr_photons_over_pixel 
+
+### which pixels to calculate. In this case pixel 0..9 in radial direction and 0..0 in azimuthal direction
+mc_backward 0 0 0 9
+
+# Angular radius of the sun
+mc_sun_angular_size 0.266
+
+### debugging information
+quiet

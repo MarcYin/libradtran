@@ -1,0 +1,9 @@
+                         # Location of atmospheric profile file. 
+atmosphere_file ../data/atmmod/afglus.dat
+
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+
+wavelength 310.0 310.0   # Wavelength range [nm]
+
+quiet

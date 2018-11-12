@@ -1,0 +1,36 @@
+# Input file to test the uvspec implementation of the Fu and Liou code 
+# against the original code provided by Fred Rose; use RUN from fu0300b.tar.gz, 
+# replace  idkfr   (2 -> 0), 
+#          lband6a (T -> F), 
+#          lchou   (T -> F), 
+#          SZA (0.5 -> 0.8660425),
+#          ispec (4 -> 1), 
+#     and  atau (0.2 -> 0.000001); 
+# remove '| grep Flx1'; the spectral direct and diffuse surface flux is then stored 
+# in fort.22. Direct surface flux calculated by the original fu0300b.tar.gz code 
+# and by uvspec agree over the first 5 digits!
+#
+# The parameters desribed above are the settings used in uvspec; for 
+# their meaning refer to src/ckdfuf.f and src/fl_*
+
+
+                         # Location of atmospheric profile file. 
+atmosphere_file ../examples/KTROP.UVSPEC 
+
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/fu
+
+albedo 0.0
+
+rte_solver disort        # Radiative transfer equation solver
+number_of_streams  4                  # Number of streams
+
+sza 30                   # Solar zenith angle
+
+wavelength_index 1 6     # Use only first six bands (solar)
+
+mol_abs_param FU          # Correlated-k by Fu and Liou [1992/93]
+
+output_process sum               # Calculate integrated solar irradiance
+
+quiet

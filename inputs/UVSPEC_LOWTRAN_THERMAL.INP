@@ -1,0 +1,14 @@
+# uvspec data files
+data_files_path ../data/
+atmosphere_file ../examples/AFGLUS.70KM
+source thermal ../examples/UVSPEC_LOWTRAN_THERMAL.TRANS
+
+rte_solver twostr     # Radiative transfer equation solver
+pseudospherical
+wavelength_grid_file ../examples/UVSPEC_LOWTRAN_THERMAL.TRANS
+
+mol_abs_param LOWTRAN  # select LOWTRAN molecular absorption 
+
+output_process per_nm
+
+quiet

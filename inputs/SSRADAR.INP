@@ -1,0 +1,22 @@
+# wvl - z-pos -   zenith angle - ground altitude
+# mm  - m     -   degree       - m
+  8.5   0.0       0.0            0.0 
+# Range Gates - RG Length - First RG - Output
+# (int)         m           m          (-1,0,1)
+  6            1000.0       0.0        -1
+# height - thickness - reff - dist - distparam - max rad factor - T - phase - LWC
+# m        m           um     (str)  (double)    (double)         °C  (str)   g/m^3
+  1000.0   1000.0      18.0   mono   1.1          7.               25.  water   0.28
+  2000.0   1000.0      15.0   mono   1.1          7.               25.  water   0.21
+  3000.0   1000.0      12.0   mono   1.1          7.               25. water  0.17
+  4000.0   1000.0      10.0   mono   1.1          7.               25. water     0.11
+# Range Gate Length is the radial distance to the radar.
+# Zenith angle goes from 0 = upward to 180 = downward, 90 is not allowed
+# Output: -1 = txt, 1 = mmclx, 0 = both, only works if output file is specified
+# dist = mono, gamma, log
+# phase = water, ice (supercooled water possible down to -34°C)
+# First RG is distance of first RG from the radar (z-pos), always positive
+# for distparam (alpha) and max rad factor (n_r_max) see mie tool options in the libRadtran doc.
+# dist can be a filename with a two-column size distribution file with the format:
+# radius(um)	distribution_density
+# the distribution density doesn't have to be normed.

@@ -1,0 +1,7 @@
+include ../examples/UVSPEC_AEROSOL.INP  # Include's may be nested. 
+include ../examples/UVSPEC_WC.INP
+
+rte_solver twostr  # This override what is specified in above file
+                   # and files included in that file etc.
+
+pseudospherical

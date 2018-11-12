@@ -1,0 +1,31 @@
+                         # Location of atmospheric profile file. 
+atmosphere_file ../data/atmmod/afglms.dat
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+
+wavelength 400.0          # Wavelength considered
+
+sza 70                 # Solar zenith angle
+phi0 0.                # Sun in the South
+
+mc_vroom on
+mc_sample_grid 9 1000                      # sample grid, 9 x 1000 grid boxes
+mc_sensorposition 1500 20000 1             # position of camera [m]
+mc_panorama_view 180 180.45 90. 140.       # definition of camera FOV
+mc_backward 0 299 0 299                    # define pixels to calculate
+
+rte_solver montecarlo
+
+# MYSTIC input files
+wc_file 3D ../examples/UVSPEC_MC_WC_VROOM.DAT
+wc_properties mie interpolate
+
+albedo_file ../data/albedo/gras.dat
+
+#MYSTIC settings
+
+mc_randomseed 21               # make results exactly reproducable
+
+mc_photons 500000
+
+quiet

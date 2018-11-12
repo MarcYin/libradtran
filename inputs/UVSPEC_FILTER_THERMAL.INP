@@ -1,0 +1,20 @@
+data_files_path ../data/ 
+
+rte_solver disort          # Radiative transfer equation solver
+
+mol_abs_param lowtran
+
+albedo 0                   # set albedo to 0, emissivity to 1
+source thermal             # thermal
+
+	# the file containing the filter function
+filter_function_file ../data/filter/msg/msg1_seviri_ch039 #normalize # normalize integral of filter function over wavelength
+
+wavelength 3040 4800       # covers the wavelength range of the filter function 
+
+output_process integrate           # integrate over wavelength, considering the filter function
+
+zout TOA                   # top of atmosphere
+umu 0.5 1.0                # looking downward
+
+quiet

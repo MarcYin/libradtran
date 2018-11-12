@@ -1,0 +1,28 @@
+                         # Location of atmospheric profile file. 
+atmosphere_file ../examples/UVSPEC_MC_ATM.DAT
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+mol_modify O3 300. DU
+day_of_year 170          # Correct for Earth-Sun distance
+sza 58                   # Solar zenith angle
+phi0 180.0               # Sun in the North
+
+rte_solver montecarlo    # Radiative transfer equation solver MYSTIC
+mc_photons 1000000       # MYSTIC number of photons
+	
+mc_polarisation
+	
+wavelength 550.0           # Wavelengths considered
+
+umu -0.5                   # Viewing direction
+phi 10
+
+bpdf_tsang_u10 5
+mc_surface_reflectalways
+
+quiet
+
+# The results given in UVSPEC_MC_BPDF.OUT can be found in the file 
+# mc.rad, columns 3,4,8. 
+# Column 3 and 4 are the viewing zenith and azimuth and column 8 is the
+# Stokes vector (I,Q,U,V).

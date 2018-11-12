@@ -1,0 +1,24 @@
+atmosphere_file ../examples/AFGLT50.DAT
+source solar ../data/solar_flux/kurudz_0.1nm.dat
+
+mol_abs_param crs        # Switch off REPTRAN
+
+albedo 0.3
+
+# Since I do not have a SO2 profile available, use the NO2 profiles
+# provided with libRadtran. To be changed as NO2 has a different behaviour
+# than SO2.  Arve 20111229.
+mol_file SO2  ../data/atmmod/afglus_no2.dat
+
+umu -1
+
+# Internally uvspec does the spectral calculations with a 0.5 nm resolution
+# wavelength grid. This is too coarse to grab all the details of the SO2
+# cross section. Hence, increase the resolution by the following option.
+wavelength_grid_file ../examples/UVSPEC_SO2_TRANS
+
+wavelength 290 320
+
+output_user wavelength edir edn eup uu
+
+quiet

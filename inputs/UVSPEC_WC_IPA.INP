@@ -1,0 +1,18 @@
+
+atmosphere_file ../examples/ATMOSPHERE_IPA.DAT
+                            # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+mol_modify O3 300. DU
+
+albedo 0.2                  # Surface albedo
+sza 30.0                    # Solar zenith angle
+
+rte_solver twostr          # Radiative transfer equation solver
+pseudospherical
+
+wavelength 400 400
+                            # use independent pixel approximation
+wc_ipa   ../examples/WCLOUD3D.IPA.DAT   # 3D cloud info, see libRadtran documentation for description
+
+quiet
+

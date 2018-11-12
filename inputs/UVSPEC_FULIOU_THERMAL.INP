@@ -1,0 +1,16 @@
+                         # Location of atmospheric profile file. 
+atmosphere_file ../examples/KTROP.UVSPEC 
+
+                         # Location of the extraterrestrial spectrum
+source thermal ../data/solar_flux/fu      # Thermal irradiance
+
+albedo 0.0
+
+rte_solver disort        # Radiative transfer equation solver
+number_of_streams  4                  # Number of streams
+
+wavelength_index 7 18    # Use only the 12 thermal bands
+
+mol_abs_param FU          # Correlated-k by Fu and Liou [1992/93]
+
+quiet

@@ -1,0 +1,12 @@
+rte_solver twostr        # Radiative transfer equation solver
+
+# Uncomment the following line to use finer spectral resolution
+# for wavelength > 395nm
+
+#mol_abs_param reptran fine 
+
+source solar             # solar
+
+wavelength 300 3000   # Reptran allows for 120nm to 5000nm
+
+quiet

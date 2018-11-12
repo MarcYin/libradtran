@@ -1,0 +1,24 @@
+atmosphere_file midlatitude_winter
+source solar ../data/solar_flux/kurudz_1.0nm.dat
+
+albedo 0.1            # Surface albedo
+
+rte_solver disort     # Radiative transfer equation solver
+
+wavelength 549 551     # Wavelength range
+mol_abs_param reptran  # select reptran molecular absorption
+
+aerosol_default
+aerosol_set_tau_at_wvl 550 0.2
+
+# Calculate spherical albedo, only cdisort can do this.
+disort_spherical_albedo
+
+# for disort_spherical_albedo option umu is cosine of solar zenith angle
+# umu=1 is sun in zenith
+umu 0.01 0.5 0.75 0.9 1.0
+
+# With disort_spherical albedo only spher_alb makes sense as output
+output_user lambda  spher_alb 
+
+quiet

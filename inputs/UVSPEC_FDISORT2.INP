@@ -1,0 +1,24 @@
+include ../examples/UVSPEC_CLEAR.INP
+
+rte_solver fdisort2      # This overrides what is specified in above file
+disort_intcor moments       # use Legendre coefficients for intensity corrections
+
+
+# aerosol properties; activate aerosol with aerosol_default
+aerosol_default
+
+# define aerosol optical properties of each layer
+aerosol_file explicit  ../examples/AERO_FILES 
+
+# over-write the profile of the aerosol extinction coefficient;
+# the aerosol_tau_file is wavelength-independent
+aerosol_file tau ../examples/AERO_TAU.DAT
+
+# create a wavelength dependence by over-writing the total 
+# aerosol optical thickness with a wavelength-dependent value,
+# parameterized by the angstrom parameters alpha and beta
+aerosol_angstrom 1.1 0.07       
+
+mol_abs_param crs
+
+quiet

@@ -1,0 +1,9 @@
+atmosphere_file midlatitude_summer
+source solar ../data/solar_flux/kurudz_1.0nm.dat
+
+wavelength 1064
+mol_tau_file abs ../examples/UVSPEC_TRANSMITTANCE_MOL_TAU_FILE_AFGLMS.09000.3wvn.cdf
+wavelength_grid_file ../examples/UVSPEC_TRANSMITTANCE_WL.DAT
+
+rte_solver disort         # Radiative transfer equation solver
+quiet

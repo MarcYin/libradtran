@@ -1,0 +1,33 @@
+                         # Location of atmospheric profile file. 
+atmosphere_file ../examples/AFGLMS50.DAT
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+
+mol_modify O3 300. DU
+day_of_year 170          # Correct for Earth-Sun distance
+albedo 0.2               # Surface albedo
+sza 32.0                 # Solar zenith angle, from file
+rte_solver disort        # Radiative transfer equation solver
+disort_intcor moments       # use Legendre coefficients for intensity corrections
+deltam  on               # delta-M scaling on
+number_of_streams  6                  # Number of streams
+
+wavelength 544.7 544.7          # Wavelengths considered
+
+aerosol_vulcan 1          # Aerosol type above 2km
+aerosol_haze 6            # Aerosol type below 2km
+aerosol_season 1          # Summer season
+aerosol_visibility 20.0   # Visibility
+aerosol_angstrom 1.1 0.2  # Scale aerosol optical depth 
+                          # using Angstrom alpha and beta
+                          # coefficients
+
+wc_file 1D ../examples/WC_REDISTRIBUTION.DAT  # Location of the water cloud file
+wc_properties hu
+
+ic_file 1D ../examples/IC_REDISTRIBUTION.DAT  # Location of the ice cloud file
+ic_properties ../examples/IC.
+
+altitude 0.0 
+
+quiet

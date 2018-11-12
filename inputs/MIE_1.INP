@@ -1,0 +1,5 @@
+mie_program MIEV0              # Select Mie code by Wiscombe
+refrac user 1.75  0.16         # Specify refractive index
+r_eff 200.                     # Specify particle radius
+wavelength  280. 5000.         # Define wavelengths 
+wavelength_step 5.

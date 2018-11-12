@@ -1,0 +1,16 @@
+                         # Location of atmospheric profile file. 
+atmosphere_file ../data/atmmod/afglus.dat
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+mol_modify O3 300. DU    # Set ozone column
+day_of_year 170          # Correct for Earth-Sun distance
+albedo 0.2               # Surface albedo
+sza 32.0                 # Solar zenith angle
+rte_solver disort        # Radiative transfer equation solver
+number_of_streams  6     # Number of streams
+wavelength 299.0 341.0   # Wavelength range [nm]
+slit_function_file ../examples/TRI_SLIT.DAT
+                         # Location of slit function
+spline 300 340 1         # Interpolate from first to last in step
+
+quiet

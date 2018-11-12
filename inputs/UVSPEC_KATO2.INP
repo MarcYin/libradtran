@@ -1,0 +1,4 @@
+include ../examples/UVSPEC_KATO.INP
+
+mol_abs_param KATO2        # use updated version of the tables
+

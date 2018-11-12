@@ -1,0 +1,14 @@
+include ../examples/UVSPEC_CLEAR.INP
+
+aerosol_vulcan 1               # Aerosol type above 2km
+aerosol_haze 6                 # Aerosol type below 2km
+aerosol_season 1               # Summer season
+aerosol_visibility 20.0        # Visibility
+aerosol_angstrom 1.1 0.2       # Scale aerosol optical depth 
+                               # using Angstrom alpha and beta
+                               # coefficients
+aerosol_modify ssa scale 0.85  # Scale the single scattering albedo 
+                               # for all wavelengths
+aerosol_modify gg set 0.70     # Set the asymmetry factor
+aerosol_file tau ../examples/AERO_TAU.DAT
+                               # File with aerosol optical depth profile

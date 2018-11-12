@@ -1,0 +1,19 @@
+atmosphere_file ../examples/ATMOSPHERE_IPA.DAT
+
+mol_modify O3 300. DU
+
+albedo 0.2                  # Surface albedo
+sza 30.0                    # Solar zenith angle
+
+rte_solver twostr          # Radiative transfer equation solver
+pseudospherical
+
+mol_abs_param Kato          # Integrated solar radiation using Kato et al.
+wavelength_index 1 32       # Use all 12 solar bands
+
+wc_file 1D ../examples/WC50_A_R.DAT  # Location of water cloud file
+cloudcover wc 0.4           # Fraction of horizontal cloud covered by clouds;
+                            # use independent pixel approximation
+interpret_as_level wc
+
+quiet

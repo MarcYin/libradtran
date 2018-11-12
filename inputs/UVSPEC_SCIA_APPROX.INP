@@ -1,0 +1,30 @@
+atmosphere_file ../data/atmmod/afglus.dat
+source solar ../data/solar_flux/atlas_plus_modtran
+
+wc_file 1D ../examples/WC_THIN.DAT
+
+albedo 0.1
+
+sza 32
+
+umu 1        # nadir viewing direction
+phi 0
+
+zout TOA
+
+rte_solver disort
+
+# use step width of 0.1nm for the calculation to 
+# correctly sample NO2 absorption; slit function 
+# triangle with FWHM 0.44 nm, sampling distance 0.22 nm
+
+wavelength_grid_file ../examples/SCIA_TRANS.DAT
+slit_function_file ../examples/SCIA_SLIT.DAT
+spline 425 450 0.22
+
+output_quantity reflectivity
+
+# write only wavelength and reflectivity to output 
+output_user wavelength uu
+
+quiet

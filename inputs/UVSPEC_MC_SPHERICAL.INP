@@ -1,0 +1,40 @@
+# Calculate polarized zenith radiance during twilight
+
+atmosphere_file us-standard
+source solar atlas_plus_modtran 
+
+# Specify Earth radius
+earth_radius 6370
+
+# Sun position, sun below horizon at 92 degrees
+sza 92
+phi0 0 
+
+# Observer at surface
+zout 0 
+
+# Viewing direction: Zenith
+umu -1
+phi 0
+
+# Wavelength 
+wavelength 500
+
+# Radiative transfer solver MYSTIC
+rte_solver mystic
+mc_photons 1000000
+
+# Enable spherical geometry
+mc_spherical 1D
+
+# Enable polarisation
+mc_polarisation
+
+# Calculate standard deviation
+# mc_std
+
+# Output normalized by extraterrestrial irradiance 
+output_quantity transmittance
+
+quiet
+

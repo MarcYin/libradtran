@@ -1,0 +1,24 @@
+output_format flexstor
+source solar ../data/solar_flux/atlas_plus_modtran
+sza 24.7
+pressure 828.4
+albedo_file ../examples/J_UVSPEC.ALB
+data_files_path ../data/
+atmosphere_file ../examples/J_ATM.dat
+altitude 1.74
+crs_model o3 Bass_and_Paur
+mol_modify O3 306.000000 DU
+day_of_year 170
+wavelength 280.000000 700.000000
+zout 0.000000
+rte_solver sdisort
+deltam on
+quiet
+number_of_streams 6
+aerosol_vulcan 1
+aerosol_haze 5
+aerosol_season 1
+aerosol_visibility 50.0
+aerosol_angstrom 1.7 0.0108
+aerosol_modify ssa set  0.95
+aerosol_modify gg set  0.45

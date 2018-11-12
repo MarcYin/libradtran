@@ -1,0 +1,4 @@
+include ../examples/UVSPEC_CLEAR.INP
+
+wc_file 1D ../examples/WCSIMPLE.DAT # Location of water cloud file
+wc_modify tau set 15.               # Set total water cloud optical depth

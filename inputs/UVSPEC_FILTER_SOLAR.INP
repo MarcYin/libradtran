@@ -1,0 +1,19 @@
+data_files_path ../data/ 
+
+rte_solver disort          # Radiative transfer equation solver
+
+source solar ../data/solar_flux/kurudz_0.1nm.dat per_nm 
+
+albedo 0                   # set albedo to 0
+
+	# the file containing the filter function
+filter_function_file ../data/filter/msg/msg1_seviri_ch006  #normalize # normalize integral of filter function over wavelength 
+wavelength 485 785         # covers the wavelength range of the filter function
+
+output_process integrate           # integrate over wavelength, considering the filter function
+
+
+zout TOA                   # top of atmosphere
+umu 0.5 1.0                # looking downward
+
+quiet

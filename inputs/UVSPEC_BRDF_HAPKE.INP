@@ -1,0 +1,39 @@
+# Example for the Hapke BRDF parameterization; radiances are calculated for an empty 
+# atmosphere to demonstrate the angular distribution of the  reflection.
+# The example reproduces test case 14a in the DISORT3 release.
+#
+# Note that due to the combination of no_scattering and no_absorption
+# the single scatering albedo is set to 1.0 which implies that dnet flux/d op dep
+# does not agree with test case 14a which has single scattering albedo of 0.0.
+
+atmosphere_file ../data/atmmod/afglus.dat
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+
+sza 30.0                 # Solar zenith angle, from file
+phi0 0                 # To agree with DISORT3 results.
+
+rte_solver disort        # Radiative transfer equation solver
+deltam  on               # delta-M scaling on
+number_of_streams  32                 # Number of streams
+
+wavelength 400.0 400.0   # Wavelengths considered
+
+# BRDF data for DISORT 3 test
+brdf_hapke b0   1.0
+brdf_hapke h  	0.06
+brdf_hapke w 	0.6
+
+# radiance angles
+umu 0.1 0.2 0.5 1.0
+phi 0 90 180 
+
+# switch atmosphere off 
+no_scattering mol
+no_absorption 
+
+print_disort_info 1 2 3 4
+
+output_quantity transmittance
+
+quiet

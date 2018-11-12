@@ -1,0 +1,9 @@
+
+include ../examples/UVSPEC_AEROSOL.INP # Include's may be nested. 
+
+rte_solver disort  # This override what is specified in above file
+                   # and files included in that file etc.
+
+phi0 40.0          # Solar azimuth angle
+umu  -1.0 -0.5  -0.2 -0.1             # Output cosine of polar angle       
+phi 0.0 45. 90. 135. 180.0 225. 270.0 # Output azimuth angles

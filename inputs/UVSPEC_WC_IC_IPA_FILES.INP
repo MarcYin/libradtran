@@ -1,0 +1,27 @@
+                            # Location of atmospheric profile file. 
+atmosphere_file ../examples/ATMOSPHERE_IPA.DAT
+                            # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+
+mol_modify O3 300. DU
+albedo 0.2                  # Surface albedo
+sza 30.0                    # Solar zenith angle
+
+rte_solver twostr          # Radiative transfer equation solver
+pseudospherical
+
+output_quantity transmittance
+
+wavelength 500 500          # wavelength range
+ 
+# Note that water and ice files must have the same ipa weights and that
+# they must appear in the same order.
+
+wc_file ipa_files  ../examples/WC_IPA_FILES # use independent pixel approximation for water  cloud
+interpret_as_level wc
+
+ic_file ipa_files  ../examples/IC_IPA_FILES_R # use independent pixel approximation ice clouds
+ic_properties key
+ic_habit plate
+
+quiet

@@ -1,0 +1,43 @@
+# Input file that was used to generate Fig. 4 of ALIS paper 
+# (Emde et al., 2011, JQSRT)
+
+# Line-by-line absorption coefficients generated using ARTS 
+# (www.sat.ltu.se/arts)
+mol_tau_file abs  ../examples/UVSPEC_MC_SPECTRAL_MOLTAU.DAT
+
+# The atmosphere file must correspond to the one used in ARTS for 
+# generating the molecular_tau_file 
+atmosphere_file     ../examples/UVSPEC_MC_SPECTRAL_ATM.DAT 
+
+# wavelengths must also correspond to molecular_tau_file if 
+# spectrally resolved calculation is done using mc_spectral_is
+source solar         ../examples/UVSPEC_MC_SPECTRAL_WVL.DAT
+
+# Wavelength range, corresponds to range in molecular_tau_file.
+wavelength 2075.11931936086 2076.84319833853 
+
+sza 30 
+
+rte_solver mystic
+
+mc_photons 100000
+mc_vroom	
+mc_polarisation
+mc_backward
+
+mc_spectral_is			  # enable ALIS            
+bpdf_tsang_u10 5 		  # polarized surface reflection  
+mc_surface_reflectalways 
+zout toa
+umu 0.86602540378443871
+phi 0
+
+aerosol_default
+aerosol_species_file     maritime_clean
+aerosol_modify tau set 0.05
+
+quiet
+
+# The test compares the 4th and 5th column of mc.is.spc, corresponding to 
+# the total radiance I and the polarization difference Q.
+

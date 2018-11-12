@@ -1,0 +1,27 @@
+                         # Location of atmospheric profile file. 
+atmosphere_file ../data/atmmod/afglus.dat
+               
+source thermal 
+
+mol_abs_param reptran coarse
+output_quantity brightness
+wavelength  2500 100000
+
+umu 1.0
+phi 0
+
+rte_solver tzs    
+
+altitude  0.0		      
+albedo    0.1
+
+tzs_cloud_top_height  0 1 5 10 12
+output_user lambda cth uu
+zout_interpolate
+
+quiet
+
+
+
+
+

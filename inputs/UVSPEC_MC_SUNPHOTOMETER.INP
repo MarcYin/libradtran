@@ -1,0 +1,64 @@
+# Calculates the mean radiance of a sun photometer pointed at the sun at 550 nm.
+# Multiply by solid angle covered by detector to obtain irradiance, in this case
+# by 2*pi* ( cos(0.0deg) - cos(1.0deg) )
+
+atmosphere_file ../data/atmmod/afglus.dat
+source solar      ../data/solar_flux/kurudz_1.0nm.dat
+#data_files_path ../data/
+
+
+wavelength 550 550 
+
+### sun
+
+sza 0
+phi0 0
+
+### solver and tricks
+
+rte_solver montecarlo
+mc_escape
+mc_photons   100000
+mc_vroom on
+#mc_std
+
+### atmosphere
+aerosol_default
+
+### define detector
+# Align detector to the sun
+mc_panorama_alignment sun
+
+# Define number of pixels of the detector, in this case only 1 
+#              nx  ny  dx    dy [km]
+mc_sample_grid  1  1                  
+
+# Detector extent. Circular field of fiew (0..360deg.) ranging from the sun center (180deg) to 1deg distance from the sun center (179 deg)
+mc_panorama_view 0 360 179 180 
+
+# Distribute backward photons over the detector field of view
+mc_panorama distr_photons_over_pixel
+
+# Use circumsolar variance reduction methods
+# Requires VROOM -> Works only if forward peaked phase functions (aerosol/clouds) are present.
+# Use only if detector field of fiew is at least 2x sun radius
+mc_panorama circumsolar_var_red
+
+# Include direct radiance in the result
+mc_panorama with_direct_rad
+
+# Output is weighted with the cosine of the angle between photon and zenith of camera;
+# that is, the detector is asumed to be a flat surface normal to the direction to the sun.
+mc_panorama weight_with_cos
+
+### which pixels to calculate. In this case pixel 0 to 0 in azimuthal direction and 0 to 0 elevation direction
+mc_backward 0 0 0 0
+
+# Angular radius of the sun
+mc_sun_angular_size 0.266
+
+### debugging information
+#verbose
+quiet
+
+

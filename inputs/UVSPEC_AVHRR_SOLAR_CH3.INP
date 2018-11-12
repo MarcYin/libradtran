@@ -1,0 +1,36 @@
+# AVHRR parameterization by Kratz [1995]; data file to reproduce 
+# Tables 2 and 3 of the publication. Note that an improved 
+# extraterrestrial irradiance is used. To reproduce the 
+# data in the paper, replace data/solar_flux/kratz with 
+# data/solar_flux/kratz.org. Be aware that uvspec 
+# automatically chooses to use data/solar_flux/kratz as 
+# solar irradiance file if 'correlated_k AVHRR_KRATZ' is specified.
+
+ 
+                         # Location of atmospheric profile file. 
+atmosphere_file ../examples/MLS70.UVSPEC
+
+sza 53.1301
+
+rte_solver disort        # Radiative transfer equation solver
+
+
+mol_abs_param AVHRR_KRATZ # Dave Kratz' AVHRR parameterization
+wavelength_index 10 14   # Wavelength index range to be selected
+
+no_scattering mol              # no Rayleigh scattering because 
+                         # Rayleigh scattering was not included
+                         # in the calculation for the 
+                         # referenced publication
+
+albedo 0.1               # surface albedo
+
+
+zout 0.0 70.0            # surface and top of the atmosphere
+
+filter_function_file ../data/correlated_k/kratz/filter.ch3
+
+
+output_process sum           # output sum of all wavelength bands
+
+quiet

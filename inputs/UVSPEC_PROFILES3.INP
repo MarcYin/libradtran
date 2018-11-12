@@ -1,0 +1,26 @@
+atmosphere_file ../examples/AFGLT50.DAT
+source solar ../examples/TRANSMITTANCE_WL.DAT
+
+rte_solver disort        # Radiative transfer equation solver
+mol_abs_param LOWTRAN     # select LOWTRAN molecular absorption 
+wavelength_grid_file ../examples/TRANSMITTANCE_WL.DAT
+                         # define own wavelengthgrid
+
+albedo 0.3
+
+aerosol_default
+aerosol_vulcan 4
+
+mol_file O3   ../examples/AFGLT_50KM_O3.DAT  
+mol_file CO2  ../examples/AFGLT_50KM_CO2.DAT
+mol_file H2O ../examples/AFGLT_50KM_RH.DAT RH
+mol_modify O3 292.81 DU
+mixing_ratio CO2 363.31
+mixing_ratio H2O 8526.82
+
+zout 0.0000 2.9941 10.9859 13.9831 17.9606
+
+output_user zout wavelength edir edn eup
+
+quiet
+#verbose

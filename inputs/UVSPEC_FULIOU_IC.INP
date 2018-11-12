@@ -1,0 +1,23 @@
+                         # Location of atmospheric profile file. 
+atmosphere_file ../data/atmmod/afglus.dat
+
+                         # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/fu
+
+albedo_file ../examples/UVSPEC_ALBEDO.DAT
+
+
+rte_solver twostr       # Radiative transfer equation solver
+pseudospherical
+
+sza 30                   # Solar zenith angle
+
+wavelength 200.0 4500.0  # Wavelengths considered
+
+mol_abs_param FU         # Correlated-k by Fu and Liou [1992/93]
+
+ic_file 1D ../examples/IC.DAT  # Location of the ice cloud file
+ic_properties fu
+
+
+quiet

@@ -1,0 +1,25 @@
+atmosphere_file tropics
+source solar      ../data/solar_flux/atlas_plus_modtran
+
+surface_type_map IGBP
+albedo_library   IGBP
+
+altitude_map GTOPO
+
+latitude  N  28.01
+longitude E  86.90
+
+rte_solver disort        # Radiative transfer equation solver
+
+mol_abs_param FU          # Correlated-k by Fu and Liou [1992/93]
+wavelength_index 1 6     # Use only first six bands (solar)
+
+zout_sea surface 10 20 30 40 # output levels above sea surface
+
+output_process sum
+
+heating_rate local
+output_user zout_sea n_air p T theta vmr_h2o theta_e heat albedo
+
+quiet
+#verbose

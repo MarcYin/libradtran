@@ -1,0 +1,20 @@
+# Conditions for the calculation of Figure 3 in 
+# Kato et al., JQSRT 62, 109-121, 1999.
+# To compare the data, the direct irradiance calculated
+# by uvspec has to be divided by cos(30 deg) because 
+# Kato et al. plot direct normal irradiance.
+
+                         # Location of atmospheric profile file. 
+atmosphere_file ../examples/AFGLMS50.DAT
+                         # Location of the extraterrestrial spectrum
+
+albedo 0.2               # Surface albedo
+sza 30.0                 # Solar zenith angle
+rte_solver twostr       # Radiative transfer equation solver
+pseudospherical
+
+mol_abs_param KATO       # Correlated-k by Kato et al. [1999]
+
+output_process sum       # Calculate integrated solar irradiance
+
+quiet

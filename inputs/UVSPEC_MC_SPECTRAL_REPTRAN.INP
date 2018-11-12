@@ -1,0 +1,28 @@
+atmosphere_file  midlatitude_summer
+source solar     
+
+# Wavelength range
+wavelength 700 799
+
+sza 30 
+
+rte_solver mystic
+
+mc_photons 100000
+mc_polarisation
+
+mc_spectral_is 700	                 # enable ALIS (set sampling wavelength to 700 nm)            
+albedo_file ../data/albedo/gras.dat      # spectral albedo of gras
+mc_surface_reflectalways 
+zout toa
+umu 0.5
+phi 0
+
+quiet
+
+# The test compares the 4th and 5th column of mc.is.spc, corresponding to 
+# the total radiance I and the polarization difference Q.
+
+# Be careful with the results when using mc_spectral_is. The spectrum looks smooth but it
+# has a bias. Please run the simulations several times to find out the accurracy of your
+# resulting spectrum. 

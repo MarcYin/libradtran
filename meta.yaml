@@ -1,0 +1,39 @@
+package:
+  name: libradtran
+  version: "2.0.2"
+
+source:
+  fn: libRadtran-2.0.2.tar.gz
+  md5: 9123d452e9c531cd876359c7a71bf0d8 
+  url: http://www.libradtran.org/download/libRadtran-2.0.2.tar.gz
+
+requirements:
+  build: 
+    - python
+    - gsl>=2.2.1
+    - make 
+    - gcc 
+    - flex 
+    - perl
+    - libnetcdf
+    - patchelf
+    - netcdf-fortran
+  run:
+    - gsl>=2.2.1
+    - make 
+    - gcc 
+    - flex 
+    - perl
+    - libnetcdf
+    - patchelf
+    - netcdf-fortran
+about:
+  home: http://www.libradtran.org/
+  license: GPL2
+  summary: "libRadtran - library for radiative transfer - is a collection of C and Fortran functions and programs for calculation of solar and thermal radiation in the Earth's atmosphere. libRadtran is freely available under the GNU General Public License.
+
+Authors: Bernhard Mayer, Claudia Emde, Josef Gasteiger, and Arve Kylling
+
+Newest release: 2.0.2 from December 24, 2017.
+
+Home page: http://www.libradtran.org"

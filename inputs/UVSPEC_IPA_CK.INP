@@ -1,0 +1,23 @@
+                            # Location of atmospheric profile file. 
+atmosphere_file ../examples/AFGLMS50.DAT
+                            # Location of the extraterrestrial spectrum
+source solar ../data/solar_flux/atlas_plus_modtran
+mol_modify O3 300. DU
+day_of_year 170             # Correct for Earth-Sun distance
+albedo 0.2                  # Surface albedo
+sza 30.0                    # Solar zenith angle
+rte_solver twostr          # Radiative transfer equation solver
+pseudospherical
+deltam  on                  # delta-M scaling on
+number_of_streams  6                     # Number of streams
+
+mol_abs_param Kato           # Integrated solar radiation using Kato et al.
+
+wavelength_index 1 32       # Use all 12 solar bands
+
+wc_file 1D ../examples/WC50.DAT  # Location of water cloud file
+
+cloudcover wc 0.4             # Fraction of horizontal cloud covered by clouds;
+                              # use independent pixel approximation
+	
+quiet

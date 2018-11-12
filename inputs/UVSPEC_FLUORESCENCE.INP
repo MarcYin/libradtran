@@ -1,0 +1,32 @@
+atmosphere_file US-standard
+data_files_path ../data/
+
+# Note that solar_file and fluorescence_file must have the same units.
+source solar ../examples/UVSPEC_FLUORESCENCE_kurucz_640.0_810.0.dat_vac_0.01_0.01
+
+# Fluorescence requires that internally the transmittance is calculated
+# at the same grid as the solar_file. The first wavelength in the 
+# transmittance_wl_file must be the same as that specified by wavelength.
+wavelength_grid_file  ../examples/UVSPEC_FLUORESCENCE_kurucz_677_810_trans_0.01
+
+# Fluorescence and top of canopy reflectance spectra kindly provided by 
+# Dr. L. Alonso and Dr. Verrelst, University of Valencia. 
+fluorescence_file ../examples/UVSPEC_FLUORESCENCE.FLU
+albedo_file ../examples/UVSPEC_FLUORESCENCE.TOC
+
+# Lots of atmospheric lines in this part of the spectrum. Use gas absorption
+# calculated by arts.
+mol_tau_file abs ../examples/UVSPEC_FLUORESCENCE_arts-640-810.nc
+wavelength 677 697 #  O2-B band
+sza 30.0
+
+number_of_streams 16
+rte_solver disort
+
+# Simulate nadir viewing satellite.
+umu 1
+zout toa
+output_user lambda edir uu
+quiet
+#raman # Uncomment to include rotational Raman scattering.
+
