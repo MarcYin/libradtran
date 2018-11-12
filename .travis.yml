@@ -20,6 +20,8 @@ install:
   - conda list
 script:
   - conda install -c f0xy libradtran
+  - wget http://www.libradtran.org/download/libradtran-2.0.2.tar.gz
+  - tar -xvf libradtran-2.0.2.tar.gz
 after_success:
-  - cd examples
+  - cd libRadtran-2.0.2/examples
   - for i in $(ls ./*.INP); do uvspec < $i;done 
