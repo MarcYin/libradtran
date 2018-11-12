@@ -6,6 +6,9 @@
 
 `conda install -c f0xy libradtran `
 
+In case OpenBLAS is not installed in your computer:
+
+`conda install -c anaconda openblas`
 
 ## Description:
 
