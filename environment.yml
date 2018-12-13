@@ -1,0 +1,11 @@
+name: example-environment
+channels:
+  - conda-forge
+  -c f0xy
+dependencies:
+  - python
+  - numpy
+  - libradtran
+  - pip:
+    - matplotlib
+    - Py6S
