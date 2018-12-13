@@ -1,7 +1,7 @@
 name: example-environment
 channels:
   - conda-forge
-  -c f0xy
+  - f0xy
 dependencies:
   - python
   - numpy
