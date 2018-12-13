@@ -1,0 +1,29 @@
+data_files_path libRadtran-2.0.2/data/ # specify the libRadtran metadata directory     
+atmosphere_file US-standard    # choose US-standard atmosphere file
+source solar kurudz_400_2500_0.01nm.dat # chose the Kurudz solar spectrum 
+
+mol_modify H2O 34.000000 MM  # modify the Total column of water vapour
+mol_modify O3 300.000000 DU  # modify the Total column of Ozone
+
+mol_abs_param reptran fine # chose finer absorbtion you need download data from the libRadtran page
+
+rte_solver disort # radiative transfer solver
+
+aerosol_default # specify the aerosol to be continental with AOT at 550 to be 0.2
+aerosol_species_file  continental_average    
+aerosol_set_tau_at_wvl 550 0.200000 
+
+wavelength 549 780     # set the computation wavelength (have to include 550...)
+
+number_of_streams 16 # Number of streams used to solve the radiative transfer equation
+
+umu 0.996 # cosine of view zenith angle np.cos(np.deg2rad(5))
+
+albedo 0.1 # surface albedo
+
+altitude 0. # surface elevation
+
+zout sur # specify the output altidude (this can be different from surface elevation)
+
+output_user lambda eglo # the output parameters (one per column for all the specified zout)
+quiet

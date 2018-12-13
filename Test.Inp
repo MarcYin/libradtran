@@ -1,0 +1,29 @@
+data_files_path libRadtran-2.0.2/data/      
+atmosphere_file US-standard    
+source solar libRadtran-2.0.2/data/solar_flux/kurudz_1.0nm.dat     
+
+mol_modify H2O 34.000000 MM     
+mol_modify O3 300.000000 DU     
+
+mol_abs_param reptran 
+
+rte_solver disort
+
+number_of_streams 16 
+
+aerosol_default 
+aerosol_species_file  continental_average    
+aerosol_set_tau_at_wvl 550 0.200000 
+
+wavelength 400.00000000 2500.00000000     
+
+umu 0.996
+
+albedo 0.1
+
+altitude 0.
+
+zout sur toa
+
+output_user lambda eglo
+quiet

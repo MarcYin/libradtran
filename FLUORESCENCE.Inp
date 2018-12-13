@@ -1,0 +1,31 @@
+atmosphere_file US-standard
+data_files_path libRadtran-2.0.2/data/
+
+# Note that solar_file and fluorescence_file must have the same units.
+source solar libRadtran-2.0.2/examples/UVSPEC_FLUORESCENCE_kurucz_640.0_810.0.dat_vac_0.01_0.01
+
+# Fluorescence requires that internally the transmittance is calculated
+# at the same grid as the solar_file. The first wavelength in the 
+# transmittance_wl_file must be the same as that specified by wavelength.
+wavelength_grid_file  UVSPEC_FLUORESCENCE_wv.txt#libRadtran-2.0.2/examples/UVSPEC_FLUORESCENCE_kurucz_677_810_trans_0.01
+
+mol_abs_param reptran fine
+
+# Fluorescence and top of canopy reflectance spectra kindly provided by 
+# Dr. L. Alonso and Dr. Verrelst, University of Valencia. 
+fluorescence_file libRadtran-2.0.2/examples/UVSPEC_FLUORESCENCE.FLU
+albedo_file libRadtran-2.0.2/examples/UVSPEC_FLUORESCENCE.TOC
+
+# Lots of atmospheric lines in this part of the spectrum. Use gas absorption
+# calculated by arts.
+mol_tau_file abs libRadtran-2.0.2/examples/UVSPEC_FLUORESCENCE_arts-640-810.nc
+wavelength 640 780 #  O2-B band
+sza 30.0
+
+number_of_streams 16
+rte_solver disort
+
+# Simulate nadir viewing satellite.
+umu 1
+zout sur toa
+output_user lambda eglo uu

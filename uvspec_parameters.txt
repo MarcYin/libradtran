@@ -1,0 +1,62 @@
+lambda & Wavelength $nm$  
+wavelength & Wavelength $nm$  
+wavenumber & Wavenumber $cm^1$  
+wvn & Wavenumber $cm^-1$  
+wvl & Wavelength $nm$  
+edir & Direct beam irradiance (same unit as extraterrestrial irradiance &  e.g mW/m^2/nm if using the "atlas3" spectrum in the /data/solar_flux/ directory.)  
+edn & Diffuse downwelling irradiance &  i.e. total minus direct beam (same unit as edir).  
+eup & Diffuse upwelling irradiance (same unit as edir).  
+uavg & The mean intensity. Proportional to the actinic flux &  To obtain the actinic flux &  multiply the mean intensity by 4 pi (same unit as edir).  
+uavgdir & Direct beam contribution to the mean intensity. (same unit as edir).  
+uavgdn & Diffuse downward radiation contribution to the mean intensity. (same unit as edir).  
+uavgup & Diffuse upward radiation contribution to the mean intensity. (same unit as edir).  
+umu & Cosine of the zenith angles for sightline radiance (intensity) calculations.  
+u0u & The azimuthally averaged intensity at n_umu user specified angles umu. (units of e.g. mW/m^2/nm/sr if using the "atlas3" spectrum in the /data/solar_flux/ directory.)   
+uu & The radiance (intensity) at umu and phi user specified angles (unit e.g. mW/m^2/nm/sr if using the "atlas3" spectrum in the /data/solar_flux/ directory.)   
+uu_down & The downwelling radiances (intensity) at cmu and phi angles (unit e.g. mW/m^2/nm/sr if using the "atlas3" spectrum in the /data/solar_flux? directory.)  
+uu_up & The upwelling radiances (intensity) at cmu and phi angles (unit e.g. mW/m^2/nm/sr if using the "atlas3" spectrum in the /data/solar_flux/ directory.)   
+cmu & Computational polar angles from polradtran  
+down_fluxI & The total (direct+diffuse) downward (down flux) irradiances (Stokes I component). Same units as extraterrestrial irradiance.  
+up_fluxI & The total (direct+diffuse) upward (up flux) irradiances (Stokes I component). Same units as extraterrestrial irradiance.  
+down_fluxQ & The total (direct+diffuse) downward (down flux) irradiances (Stokes Q component). Same units as extraterrestrial irradiance.  
+up_fluxQ & The total (direct+diffuse) upward (up flux) irradiances (Stokes Q component). Same units as extraterrestrial irradiance.  
+down_fluxU & The total (direct+diffuse) downward (down flux) irradiances (Stokes U component). Same units as extraterrestrial irradiance.  
+up_fluxU & The total (direct+diffuse) upward (up flux) irradiances (Stokes U component). Same units as extraterrestrial irradiance  
+down_fluxV & The total (direct+diffuse) downward (down flux) irradiances (Stokes V component). Same units as extraterrestrial irradiance.  
+up_fluxV & The total (direct+diffuse) upward (up flux) irradiances (Stokes V component). Same units as extraterrestrial irradiance.  
+eglo & Global downwelling irradiance  
+enet & Global downwelling minus upwelling (net downward irradiance)  
+esum & Global downwelling plus upwelling  
+fdir & Direct actinic flux (scalar irradiance)  
+fglo & Global actinic flux (scalar irradiance)  
+fdn & Downwelling actinic flux (scalar irradiance)  
+fup & Upwelling actinic flux (scalar irradiance)  
+uavgglo & Total (global) mean diffuse intensity (radiance) = actinic flux/4pi  
+f & Actinic flux (scalar irradiance)  
+sza & Solar zenith angle $deg$  
+n_air & Air refractive index  
+zout & Altitude above ground $km$  
+zout_sea & Altitude above sea level $km$  
+sph_alb & Spherical albedo of the complete atmosphere  
+albedo & Albedo  
+heat & Heating rate in K/day  
+n_xxx & Number density of gas xxx $cm^-3$  
+rho_xxx & Mass density of gas xxx $kg/m^3$  
+mmr_xxx & Mass mixing ratio of gas xxx $kg/kg$  
+vmr_xxx & Volume mixing ratio of gas xxx $m^3/m^3$  
+p & Pressure $hPa$  
+T & Temperature $K$  
+T_d & Dewpoint temperature $K$  
+T_sur & Surface temperature $K$  
+sur_temperature & Surface Temperature $K$  
+theta & Potential temperature $K$  
+theta_e & Equivalent potential temperature $K$  
+rh & Relative humidity over water $\%$  
+rh_ice & Relative humidity over ice $\%$  
+c_p & Specific heat capacity of the air  
+CLWC & Cloud liquid water content $kg/kg$  
+CLWD & Cloud liquid water density $g/m^3$  
+CIWC & Cloud ice water content $kg/kg$  
+CIWD & Cloud ice water density $g/m^3$  
+TCC & Total cloud cover $0-1$  
+cth & Cloud top height $km$

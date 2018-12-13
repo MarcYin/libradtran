@@ -1,0 +1,258 @@
+<table>
+<thead>
+<tr>
+<th align="left">parameter</th>
+<th align="left">physical meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">lambda</td>
+<td align="left">Wavelength nm</td>
+</tr>
+<tr>
+<td align="left">wavelength</td>
+<td align="left">Wavelength nm</td>
+</tr>
+<tr>
+<td align="left">wavenumber</td>
+<td align="left">Wavenumber cm^1</td>
+</tr>
+<tr>
+<td align="left">wvn</td>
+<td align="left">Wavenumber cm^-1</td>
+</tr>
+<tr>
+<td align="left">wvl</td>
+<td align="left">Wavelength nm</td>
+</tr>
+<tr>
+<td align="left">edir</td>
+<td align="left">Direct beam irradiance (same unit as extraterrestrial irradiance, e.g mW/m^2/nm if using the "atlas3" spectrum in the /data/solar_flux/ directory.)</td>
+</tr>
+<tr>
+<td align="left">edn</td>
+<td align="left">Diffuse downwelling irradiance, i.e. total minus direct beam (same unit as edir).</td>
+</tr>
+<tr>
+<td align="left">eup</td>
+<td align="left">Diffuse upwelling irradiance (same unit as edir).</td>
+</tr>
+<tr>
+<td align="left">uavg</td>
+<td align="left">The mean intensity. Proportional to the actinic flux. To obtain the actinic flux, multiply the mean intensity by 4 pi (same unit as edir).</td>
+</tr>
+<tr>
+<td align="left">uavgdir</td>
+<td align="left">Direct beam contribution to the mean intensity. (same unit as edir).</td>
+</tr>
+<tr>
+<td align="left">uavgdn</td>
+<td align="left">Diffuse downward radiation contribution to the mean intensity. (same unit as edir).</td>
+</tr>
+<tr>
+<td align="left">uavgup</td>
+<td align="left">Diffuse upward radiation contribution to the mean intensity. (same unit as edir).</td>
+</tr>
+<tr>
+<td align="left">umu</td>
+<td align="left">Cosine of the zenith angles for sightline radiance (intensity) calculations.</td>
+</tr>
+<tr>
+<td align="left">u0u</td>
+<td align="left">The azimuthally averaged intensity at n_umu user specified angles umu. (units of e.g. mW/m^2/nm/sr if using the "atlas3" spectrum in the /data/solar_flux/ directory.)</td>
+</tr>
+<tr>
+<td align="left">uu</td>
+<td align="left">The radiance (intensity) at umu and phi user specified angles (unit e.g. mW/m^2/nm/sr if using the "atlas3" spectrum in the /data/solar_flux/ directory.)</td>
+</tr>
+<tr>
+<td align="left">uu_down</td>
+<td align="left">The downwelling radiances (intensity) at cmu and phi angles (unit e.g. mW/m^2/nm/sr if using the "atlas3" spectrum in the /data/solar_flux/ directory.)</td>
+</tr>
+<tr>
+<td align="left">uu_up</td>
+<td align="left">The upwelling radiances (intensity) at cmu and phi angles (unit e.g. mW/m^2/nm/sr if using the "atlas3" spectrum in the /data/solar_flux/ directory.)</td>
+</tr>
+<tr>
+<td align="left">cmu</td>
+<td align="left">Computational polar angles from polradtran</td>
+</tr>
+<tr>
+<td align="left">down_fluxI</td>
+<td align="left">The total (direct+diffuse) downward (down flux) irradiances (Stokes I component). Same units as extraterrestrial irradiance.</td>
+</tr>
+<tr>
+<td align="left">up_fluxI</td>
+<td align="left">The total (direct+diffuse) upward (up flux) irradiances (Stokes I component). Same units as extraterrestrial irradiance.</td>
+</tr>
+<tr>
+<td align="left">down_fluxQ</td>
+<td align="left">The total (direct+diffuse) downward (down flux) irradiances (Stokes Q component). Same units as extraterrestrial irradiance.</td>
+</tr>
+<tr>
+<td align="left">up_fluxQ</td>
+<td align="left">The total (direct+diffuse) upward (up flux) irradiances (Stokes Q component). Same units as extraterrestrial irradiance.</td>
+</tr>
+<tr>
+<td align="left">down_fluxU</td>
+<td align="left">The total (direct+diffuse) downward (down flux) irradiances (Stokes U component). Same units as extraterrestrial irradiance.</td>
+</tr>
+<tr>
+<td align="left">up_fluxU</td>
+<td align="left">The total (direct+diffuse) upward (up flux) irradiances (Stokes U component). Same units as extraterrestrial irradiance</td>
+</tr>
+<tr>
+<td align="left">down_fluxV</td>
+<td align="left">The total (direct+diffuse) downward (down flux) irradiances (Stokes V component). Same units as extraterrestrial irradiance.</td>
+</tr>
+<tr>
+<td align="left">up_fluxV</td>
+<td align="left">The total (direct+diffuse) upward (up flux) irradiances (Stokes V component). Same units as extraterrestrial irradiance.</td>
+</tr>
+<tr>
+<td align="left">eglo</td>
+<td align="left">Global downwelling irradiance</td>
+</tr>
+<tr>
+<td align="left">enet</td>
+<td align="left">Global downwelling minus upwelling (net downward irradiance)</td>
+</tr>
+<tr>
+<td align="left">esum</td>
+<td align="left">Global downwelling plus upwelling</td>
+</tr>
+<tr>
+<td align="left">fdir</td>
+<td align="left">Direct actinic flux (scalar irradiance)</td>
+</tr>
+<tr>
+<td align="left">fglo</td>
+<td align="left">Global actinic flux (scalar irradiance)</td>
+</tr>
+<tr>
+<td align="left">fdn</td>
+<td align="left">Downwelling actinic flux (scalar irradiance)</td>
+</tr>
+<tr>
+<td align="left">fup</td>
+<td align="left">Upwelling actinic flux (scalar irradiance)</td>
+</tr>
+<tr>
+<td align="left">uavgglo</td>
+<td align="left">Total (global) mean diffuse intensity (radiance) = actinic flux/4pi</td>
+</tr>
+<tr>
+<td align="left">f</td>
+<td align="left">Actinic flux (scalar irradiance)</td>
+</tr>
+<tr>
+<td align="left">sza</td>
+<td align="left">Solar zenith angle deg</td>
+</tr>
+<tr>
+<td align="left">n_air</td>
+<td align="left">Air refractive index</td>
+</tr>
+<tr>
+<td align="left">zout</td>
+<td align="left">Altitude above ground km</td>
+</tr>
+<tr>
+<td align="left">zout_sea</td>
+<td align="left">Altitude above sea level km</td>
+</tr>
+<tr>
+<td align="left">sph_alb</td>
+<td align="left">Spherical albedo of the complete atmosphere</td>
+</tr>
+<tr>
+<td align="left">albedo</td>
+<td align="left">Albedo</td>
+</tr>
+<tr>
+<td align="left">heat</td>
+<td align="left">Heating rate in K/day</td>
+</tr>
+<tr>
+<td align="left">n_xxx</td>
+<td align="left">Number density of gas xxx cm^-3</td>
+</tr>
+<tr>
+<td align="left">rho_xxx</td>
+<td align="left">Mass density of gas xxx kg/m^3</td>
+</tr>
+<tr>
+<td align="left">mmr_xxx</td>
+<td align="left">Mass mixing ratio of gas xxx kg/kg</td>
+</tr>
+<tr>
+<td align="left">vmr_xxx</td>
+<td align="left">Volume mixing ratio of gas xxx m^3/m^3</td>
+</tr>
+<tr>
+<td align="left">p</td>
+<td align="left">Pressure hPa</td>
+</tr>
+<tr>
+<td align="left">T</td>
+<td align="left">Temperature K</td>
+</tr>
+<tr>
+<td align="left">T_d</td>
+<td align="left">Dewpoint temperature K</td>
+</tr>
+<tr>
+<td align="left">T_sur</td>
+<td align="left">Surface temperature K</td>
+</tr>
+<tr>
+<td align="left">sur_temperature</td>
+<td align="left">Surface Temperature K</td>
+</tr>
+<tr>
+<td align="left">theta</td>
+<td align="left">Potential temperature K</td>
+</tr>
+<tr>
+<td align="left">theta_e</td>
+<td align="left">Equivalent potential temperature K</td>
+</tr>
+<tr>
+<td align="left">rh</td>
+<td align="left">Relative humidity over water %</td>
+</tr>
+<tr>
+<td align="left">rh_ice</td>
+<td align="left">Relative humidity over ice %</td>
+</tr>
+<tr>
+<td align="left">c_p</td>
+<td align="left">Specific heat capacity of the air</td>
+</tr>
+<tr>
+<td align="left">CLWC</td>
+<td align="left">Cloud liquid water content kg/kg</td>
+</tr>
+<tr>
+<td align="left">CLWD</td>
+<td align="left">Cloud liquid water density g/m^3</td>
+</tr>
+<tr>
+<td align="left">CIWC</td>
+<td align="left">Cloud ice water content kg/kg</td>
+</tr>
+<tr>
+<td align="left">CIWD</td>
+<td align="left">Cloud ice water density g/m^3</td>
+</tr>
+<tr>
+<td align="left">TCC</td>
+<td align="left">Total cloud cover 0-1</td>
+</tr>
+<tr>
+<td align="left">cth</td>
+<td align="left">Cloud top height km</td>
+</tr>
+</tbody>
+</table>
