@@ -12,7 +12,7 @@ In case OpenBLAS is not installed in your computer:
 
 ### Demo for derive 6S equivalent atmospheric correction parameters:
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MarcYin/libradtran.git/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MarcYin/libradtran/master)
 
 ## Description:
 
