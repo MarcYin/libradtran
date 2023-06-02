@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solar_libraries
+  labels:
+    app: solar_libraries
+  namespace: solarlibrary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solar_libraries
+  template:
+    metadata:
+      labels:
+        app: solar_libraries
+    spec:
+      containers:
+        - name: solar_libraries
+          image: acrworkflow1685746278065.azurecr.io/image-workflow-1685746278065:latest
+          ports:
+            - containerPort: 8000
